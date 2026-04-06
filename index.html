@@ -26,7 +26,7 @@ body{
 
 /* LOGOS */
 .logo-top{
-  max-width:240px;
+  max-width:300px;
   margin:0 auto 10px;
   display:block;
 }
@@ -47,15 +47,17 @@ body{
   backdrop-filter:blur(6px);
 }
 
+.city{
+  color:rgba(210,210,210,.85);
+  font-size:13px;
+  margin-bottom:4px;
+  font-weight:700;
+}
+
 .stars{
   color:#ffd76a;
   font-weight:bold;
-}
-
-.city{
-  color:rgba(210,210,210,.8);
-  font-size:13px;
-  margin-top:2px;
+  margin-bottom:4px;
 }
 
 .label{
@@ -83,9 +85,9 @@ body{
   text-decoration:none;
   border:2px solid rgba(0,0,0,.35);
   box-shadow:
-    0 0 20px rgba(37,211,102,.9),
+    0 0 22px rgba(37,211,102,.95),
     0 10px 25px rgba(0,0,0,.28);
-  animation:pulse 1s infinite;
+  animation:pulse 0.85s infinite;
 }
 
 .btn svg{
@@ -95,25 +97,51 @@ body{
 }
 
 @keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.08);}
-  100%{transform:scale(1);}
+  0%{
+    transform:scale(1);
+    box-shadow:
+      0 0 22px rgba(37,211,102,.95),
+      0 10px 25px rgba(0,0,0,.28);
+  }
+  50%{
+    transform:scale(1.11);
+    box-shadow:
+      0 0 32px rgba(37,211,102,1),
+      0 12px 28px rgba(0,0,0,.32);
+  }
+  100%{
+    transform:scale(1);
+    box-shadow:
+      0 0 22px rgba(37,211,102,.95),
+      0 10px 25px rgba(0,0,0,.28);
+  }
 }
 
 /* BARRA */
 .progress-box{
   position:relative;
   height:22px;
-  background:#1b1b1b;
   border-radius:25px;
   overflow:hidden;
   margin-top:18px;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255,255,255,.10) 0px,
+      rgba(255,255,255,.10) 8px,
+      rgba(255,255,255,.03) 8px,
+      rgba(255,255,255,.03) 16px
+    );
   box-shadow:
-    inset 0 2px 5px rgba(0,0,0,.5),
-    0 4px 10px rgba(0,0,0,.28);
+    inset 0 2px 5px rgba(0,0,0,.28),
+    0 4px 10px rgba(0,0,0,.20);
+  border:1px solid rgba(255,255,255,.10);
 }
 
 .progress-bar{
+  position:absolute;
+  top:0;
+  left:0;
   height:100%;
   width:100%;
   background:linear-gradient(90deg,#00ff88,#25D366);
@@ -129,6 +157,7 @@ body{
   font-size:13px;
   font-weight:bold;
   text-shadow:0 1px 2px rgba(0,0,0,.5);
+  z-index:2;
 }
 
 @keyframes countdown{
@@ -139,12 +168,16 @@ body{
 /* TEXTO */
 .texto{
   margin:12px 0;
-  font-weight:bold;
   font-size:16px;
+}
+
+.texto strong{
+  font-weight:900;
 }
 
 .gold{
   color:#ffd76a;
+  font-weight:900;
 }
 
 /* SLOTS */
@@ -197,9 +230,9 @@ body{
   <img class="logo-top" src="logo.png" alt="Majesty">
 
   <div class="toast">
-    <div class="stars">★★★★★</div>
     <div id="toastText">
       <div class="city">Rosario</div>
+      <div class="stars">★★★★★</div>
       <div>
         <span class="label">usuario:</span> neominb31
         <span class="action"> está reclamando el bono</span>
@@ -224,7 +257,7 @@ body{
   </div>
 
   <div class="texto">
-    Tiempo para reclamar el BONO del <span class="gold">30%</span> ...
+    Tiempo para reclamar el <strong>BONO</strong> del <span class="gold"><strong>30%</strong></span> ...
   </div>
 
   <img class="logo-bottom" src="logo2.png" alt="Ganamos">
@@ -287,7 +320,7 @@ let mensajes = [
   {city:"Reconquista", user:"tomas_88"},
   {city:"San Lorenzo", user:"agusita22"},
   {city:"Villa Constitución", user:"jerex44"},
-  {city:"Santo Tomé", user:"vale.91"},
+  {city:"Santo Tomé", user:"vale91"},
   {city:"Rosario", user:"frannb7"},
   {city:"Rafaela", user:"luucasx9"}
 ];
@@ -303,6 +336,7 @@ setInterval(() => {
 
   toastText.innerHTML = `
     <div class="city">${data.city}</div>
+    <div class="stars">★★★★★</div>
     <div>
       <span class="label">usuario:</span> ${data.user}
       <span class="action"> está reclamando el bono</span>
