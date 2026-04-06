@@ -74,10 +74,11 @@ body{
   animation:pulse 1s infinite;
 }
 
+/* 🔥 ICONO FIX */
 .wsp-icon{
-  width:22px;
-  height:22px;
-  filter:invert(1);
+  width:24px;
+  height:24px;
+  filter: brightness(0) invert(1); /* esto lo hace blanco SI O SI */
 }
 
 @keyframes pulse{
@@ -131,18 +132,33 @@ body{
   font-weight:900;
 }
 
+/* 🔥 CARDS CON BARRA (ARREGLADO) */
 .cards-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:10px;
+  gap:12px;
   margin-top:10px;
+}
+
+.slot-card{
+  background:rgba(255,255,255,.08);
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.15);
 }
 
 .slot-card img{
   width:100%;
   height:110px;
   object-fit:cover;
-  border-radius:10px;
+}
+
+/* 🔥 BARRA NOMBRE */
+.slot-name{
+  background:rgba(0,0,0,.5);
+  padding:8px;
+  font-weight:800;
+  font-size:13px;
 }
 </style>
 </head>
@@ -189,10 +205,27 @@ Tiempo para reclamar el BONO del <span class="gold">30%</span> ...
 </div>
 
 <div class="cards-grid">
-<div class="slot-card"><img src="slot1.png"></div>
-<div class="slot-card"><img src="slot2.png"></div>
-<div class="slot-card"><img src="slot3.png"></div>
-<div class="slot-card"><img src="slot4.png"></div>
+
+<div class="slot-card">
+<img src="slot1.png">
+<div class="slot-name">Spaceman</div>
+</div>
+
+<div class="slot-card">
+<img src="slot2.png">
+<div class="slot-name">Sweet Bonanza</div>
+</div>
+
+<div class="slot-card">
+<img src="slot3.png">
+<div class="slot-name">Gates of Olympus</div>
+</div>
+
+<div class="slot-card">
+<img src="slot4.png">
+<div class="slot-name">Big Bass</div>
+</div>
+
 </div>
 
 </div>
