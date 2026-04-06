@@ -8,27 +8,30 @@
 <style>
 body{
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family:Arial;
   color:white;
   text-align:center;
   background:
-    linear-gradient(rgba(0,80,30,.75),rgba(0,80,30,.85)),
-    url('fondo.png');
+  linear-gradient(rgba(0,80,30,.75),rgba(0,80,30,.85)),
+  url('fondo.png');
   background-size:cover;
-  background-position:center;
 }
 
+/* CONTAINER */
 .container{
   max-width:420px;
   margin:auto;
-  padding:18px 20px 30px;
+  padding:260px 20px 30px; /* espacio compensando subida logo */
 }
 
 /* LOGOS */
 .logo-top{
-  max-width:240px;
-  margin:0 auto 10px;
-  display:block;
+  position:absolute;
+  top:-240px; /* 🔥 SUBIDO */
+  left:0;
+  right:0;
+  margin:auto;
+  max-width:300px;
 }
 
 .logo-bottom{
@@ -39,45 +42,41 @@ body{
 
 /* TOAST */
 .toast{
-  margin:-8px auto 14px;
+  margin:0 auto 14px;
   background:rgba(255,255,255,.12);
   padding:12px;
   border-radius:14px;
   border:1px solid rgba(255,255,255,.10);
-  backdrop-filter:blur(6px);
 }
 
 .city{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:5px;
+  gap:6px;
   color:rgba(210,210,210,.85);
   font-size:13px;
-  margin-bottom:4px;
   font-weight:700;
 }
 
 .city svg{
   width:14px;
   height:14px;
-  fill:#fff; /* 🔥 BLANCO */
+  fill:rgba(210,210,210,.85); /* 🔥 MISMO COLOR */
 }
 
 .stars{
   color:#ffd76a;
-  font-weight:bold;
-  margin-bottom:4px;
+  margin:3px 0;
 }
 
 .label{font-weight:900;}
 .action{color:#00ff88;font-weight:900;}
 
-/* BOTÓN (EL ORIGINAL) */
+/* BOTON */
 .btn{
   display:inline-flex;
   align-items:center;
-  justify-content:center;
   gap:10px;
   background:linear-gradient(180deg,#31e97b,#18b957);
   color:#fff;
@@ -89,9 +88,9 @@ body{
   text-decoration:none;
   border:2px solid rgba(0,0,0,.35);
   box-shadow:
-    0 0 22px rgba(37,211,102,.95),
-    0 10px 25px rgba(0,0,0,.28);
-  animation:pulse 0.85s infinite;
+  0 0 25px rgba(37,211,102,1),
+  0 10px 25px rgba(0,0,0,.3);
+  animation:pulse .8s infinite;
 }
 
 .btn svg{
@@ -101,9 +100,7 @@ body{
 }
 
 @keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.11);}
-  100%{transform:scale(1);}
+  50%{transform:scale(1.12);}
 }
 
 /* BARRA */
@@ -114,20 +111,16 @@ body{
   overflow:hidden;
   margin-top:18px;
   background:
-    repeating-linear-gradient(
-      -45deg,
-      rgba(255,255,255,.10) 0px,
-      rgba(255,255,255,.10) 8px,
-      rgba(255,255,255,.03) 8px,
-      rgba(255,255,255,.03) 16px
-    );
-  border:1px solid rgba(255,255,255,.10);
+  repeating-linear-gradient(
+  -45deg,
+  rgba(255,255,255,.10) 0px,
+  rgba(255,255,255,.10) 8px,
+  rgba(255,255,255,.03) 8px,
+  rgba(255,255,255,.03) 16px);
 }
 
 .progress-bar{
   position:absolute;
-  top:0;
-  left:0;
   height:100%;
   width:100%;
   background:linear-gradient(90deg,#00ff88,#25D366);
@@ -137,10 +130,7 @@ body{
 .timer{
   position:absolute;
   width:100%;
-  top:0;
-  left:0;
   line-height:22px;
-  font-size:13px;
   font-weight:bold;
 }
 
@@ -152,7 +142,6 @@ body{
 /* TEXTO */
 .texto{
   margin:12px 0;
-  font-size:16px;
 }
 
 .gold{
@@ -168,7 +157,6 @@ body{
 }
 
 .slots-subtitle{
-  margin-top:4px;
   font-size:13px;
 }
 
@@ -180,23 +168,23 @@ body{
 }
 
 .slot-card{
-  background:rgba(255,255,255,.08);
   border-radius:14px;
   overflow:hidden;
-  border:1px solid rgba(255,255,255,.15);
 }
 
 .slot-card img{
   width:100%;
   height:110px;
   object-fit:cover;
+  display:block;
 }
 
 .slot-name{
+  margin:0; /* 🔥 SIN ESPACIO */
   background:rgba(0,0,0,.5);
-  padding:8px;
-  font-weight:800;
+  padding:6px;
   font-size:13px;
+  font-weight:800;
 }
 </style>
 </head>
@@ -208,26 +196,12 @@ body{
 <img class="logo-top" src="logo.png">
 
 <div class="toast">
-<div id="toastText">
-<div class="city">
-<svg viewBox="0 0 24 24">
-<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-</svg>
-Rosario
-</div>
-<div class="stars">★★★★★</div>
-<div>
-<span class="label">usuario:</span> neominb31
-<span class="action"> está reclamando el bono</span>
-</div>
-</div>
+<div id="toastText"></div>
 </div>
 
-<a class="btn"
-href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo"
-target="_blank">
+<a class="btn" href="https://wa.me/543413673831" target="_blank">
 
-<!-- ICONO WHATSAPP ORIGINAL -->
+<!-- ICONO WHATSAPP -->
 <svg viewBox="0 0 32 32">
 <path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.4 31.6l7.9-2.1c2.3 1.3 5 2.1 7.7 2.1 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4z"/>
 </svg>
@@ -257,6 +231,39 @@ Tiempo para reclamar el <strong>BONO</strong> del <span class="gold">30%</span> 
 </div>
 
 </div>
+
+<script>
+let t=30;
+setInterval(()=>{
+t--;
+if(t<=0)t=0;
+document.getElementById("timer").innerText=t+"s";
+},1000);
+
+const mensajes=[
+"Rosario|lucas91","Rafaela|mili22","Santa Fe|agus77","Venado Tuerto|mati88",
+"Reconquista|tomi44","Esperanza|luca33","San Lorenzo|facu11","Villa Constitución|juli90",
+"Santo Tomé|nico21","Rosario|cami55","Rafaela|tata66","Santa Fe|gabi77",
+"Venado Tuerto|lucho88","Esperanza|maru99","Reconquista|pepe12","San Lorenzo|santi23",
+"Villa Constitución|emi45","Santo Tomé|luana76","Rosario|rodrigo7","Rafaela|enzo19"
+];
+
+let i=0;
+
+setInterval(()=>{
+i=(i+1)%mensajes.length;
+let [city,user]=mensajes[i].split("|");
+
+document.getElementById("toastText").innerHTML=`
+<div class="city">
+<svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg>
+${city}
+</div>
+<div class="stars">★★★★★</div>
+<div><span class="label">usuario:</span> ${user} <span class="action"> está reclamando el bono</span></div>
+`;
+},2000);
+</script>
 
 </body>
 </html>
