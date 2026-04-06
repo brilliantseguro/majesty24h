@@ -37,7 +37,7 @@
 
     .logo-top {
       max-width: 320px;
-      margin: -10px 0 10px;
+      margin: -40px 0 10px; /* subido ~30px */
     }
 
     .logo-bottom {
@@ -85,9 +85,20 @@
 
     .texto {
       margin: 12px 0 18px;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       text-shadow: 0 0 8px rgba(0,0,0,0.6);
+    }
+
+    .texto .gold {
+      color: #ffd76a;
+      font-weight: 900;
+      font-size: 22px;
+      text-shadow:
+        0 1px 0 #fff2b8,
+        0 2px 0 #f5c94a,
+        0 3px 0 #d69d1d,
+        0 6px 10px rgba(0,0,0,0.5);
     }
 
     .btn {
@@ -117,15 +128,13 @@
     <!-- LOGO ARRIBA -->
     <img class="logo-top" src="logo.png" alt="Majesty">
 
-    <div class="bonus">30%</div>
-
     <!-- BARRA -->
     <div class="progress-box">
       <div class="progress-bar"></div>
     </div>
 
     <!-- TEXTO -->
-    <div class="texto">Tiempo para reclamar el BONO del 30%...</div>
+    <div class="texto">Tiempo para reclamar el BONO del <span class="gold">30%</span>...</div>
 
     <!-- BOTÓN -->
     <a class="btn"
