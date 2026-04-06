@@ -15,6 +15,7 @@
       min-height: 100vh;
       text-align: center;
       color: white;
+      overflow: hidden;
 
       background:
         linear-gradient(rgba(0, 80, 30, 0.75), rgba(0, 80, 30, 0.85)),
@@ -26,23 +27,19 @@
     .container {
       max-width: 420px;
       width: 100%;
-      padding: 10px 20px 40px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 100vh;
+      padding: 12px 20px 20px;
     }
 
-    /* LOGO ARRIBA */
     .logo-top {
-      max-width: 240px;
-      margin: -180px auto 10px; /* bien arriba */
+      max-width: 245px;
+      margin: -175px auto 12px;
+      display: block;
     }
 
-    /* LOGO ABAJO */
     .logo-bottom {
       max-width: 160px;
-      margin: 40px auto 10px; /* bien abajo */
+      margin: 48px auto 0;
+      display: block;
     }
 
     img {
@@ -59,6 +56,7 @@
       border-radius: 14px;
       backdrop-filter: blur(6px);
       box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      min-height: 72px;
     }
 
     .stars {
@@ -82,6 +80,7 @@
 
     .label {
       font-weight: 900;
+      color: #fff;
     }
 
     .action {
@@ -95,11 +94,19 @@
       color: white;
       padding: 16px 28px;
       border-radius: 999px;
+      text-decoration: none;
       font-size: 19px;
       font-weight: 900;
       margin: 22px 0;
-      text-decoration: none;
+      box-shadow:
+        0 0 0 0 rgba(37,211,102,0.75),
+        0 0 22px rgba(37,211,102,0.65),
+        0 8px 24px rgba(0,0,0,0.28);
       animation: pulse 1.3s infinite;
+    }
+
+    .btn:hover {
+      transform: scale(1.06);
     }
 
     @keyframes pulse {
@@ -114,7 +121,6 @@
       background: rgba(255,255,255,0.2);
       border-radius: 20px;
       overflow: hidden;
-      margin-top: 15px;
     }
 
     .progress-bar {
@@ -146,45 +152,39 @@
 
   <div class="container">
 
-    <div>
+    <img class="logo-top" src="logo.png">
 
-      <!-- LOGO ARRIBA -->
-      <img class="logo-top" src="logo.png">
-
-      <div class="toast">
-        <div class="stars">★★★★★</div>
-        <div id="toastText">
-          <div class="city">Rosario</div>
-          <div class="user">
-            <span class="label">usuario:</span> neominb31
-            <span class="action"> está reclamando el bono</span>
-          </div>
+    <div class="toast">
+      <div class="stars">★★★★★</div>
+      <div id="toastText">
+        <div class="city">Rosario</div>
+        <div class="user">
+          <span class="label">usuario:</span> neominb31
+          <span class="action"> está reclamando el bono</span>
         </div>
       </div>
-
-      <a class="btn"
-         href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo%20🥳🎁%20codigo:%20al%20azar%20todo%20el%20tiempo"
-         target="_blank">
-         RECLAMAR BONO
-      </a>
-
-      <div class="progress-box">
-        <div class="progress-bar"></div>
-      </div>
-
-      <div class="texto">
-        Tiempo para reclamar el BONO del <span class="gold">30%</span>...
-      </div>
-
     </div>
 
-    <!-- LOGO ABAJO -->
+    <a class="btn"
+       href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo%20🥳🎁%20codigo:%20al%20azar%20todo%20el%20tiempo"
+       target="_blank">
+       RECLAMAR BONO
+    </a>
+
+    <div class="progress-box">
+      <div class="progress-bar"></div>
+    </div>
+
+    <div class="texto">
+      Tiempo para reclamar el BONO del <span class="gold">30%</span>...
+    </div>
+
     <img class="logo-bottom" src="logo2.png">
 
   </div>
 
   <script>
-    const mensajes = [
+    let mensajes = [
       {city:"Rosario", user:"neominb31"},
       {city:"Santa Fe Capital", user:"marianb43"},
       {city:"Rafaela", user:"lucasnb41"},
@@ -195,6 +195,9 @@
       {city:"Villa Constitución", user:"juanp33"},
       {city:"Santo Tomé", user:"luli29"}
     ];
+
+    // 🔀 MEZCLA ALEATORIA
+    mensajes = mensajes.sort(() => Math.random() - 0.5);
 
     let i = 0;
     const toastText = document.getElementById("toastText");
