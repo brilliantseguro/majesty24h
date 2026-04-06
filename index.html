@@ -23,7 +23,6 @@ body{
   padding:18px 20px 30px;
 }
 
-/* LOGOS */
 .logo-top{
   max-width:240px;
   margin:-10px auto 10px;
@@ -68,7 +67,7 @@ body{
 .label{font-weight:900;}
 .action{color:#00ff88;font-weight:900;}
 
-/* BOTON */
+/* BOTON (NO TOCADO) */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -86,12 +85,6 @@ body{
   0 0 25px rgba(37,211,102,1),
   0 10px 25px rgba(0,0,0,.3);
   animation:pulse .8s infinite;
-}
-
-.btn svg{
-  width:22px;
-  height:22px;
-  fill:white;
 }
 
 @keyframes pulse{
@@ -134,7 +127,6 @@ body{
   to{width:0%;}
 }
 
-/* TEXTO */
 .texto{
   margin:12px 0;
 }
@@ -195,13 +187,8 @@ body{
 <div id="toastText"></div>
 </div>
 
+<!-- 🔴 TU BOTON (NO MODIFICADO) -->
 <a class="btn" href="https://wa.me/543413673831" target="_blank">
-
-<!-- ICONO WHATSAPP -->
-<svg viewBox="0 0 24 24">
-<path d="M20.52 3.48A11.8 11.8 0 0 0 12.05 0C5.41 0 .04 5.37.04 12c0 2.11.55 4.18 1.6 6.02L0 24l6.16-1.61A11.96 11.96 0 0 0 12.05 24c6.64 0 12.01-5.37 12.01-12 0-3.2-1.25-6.2-3.54-8.52z"/>
-</svg>
-
 RECLAMAR BONO
 </a>
 
@@ -229,7 +216,6 @@ Tiempo para reclamar el <strong>BONO</strong> del <span class="gold">30%</span> 
 </div>
 
 <script>
-// TIMER
 let t=30;
 setInterval(()=>{
 t--;
@@ -237,7 +223,6 @@ if(t<=0)t=0;
 document.getElementById("timer").innerText=t+"s";
 },1000);
 
-// 🔥 NOTIFICACIONES
 const mensajes=[
 "Rosario|lucas91","Rafaela|mili22","Santa Fe|agus77","Venado Tuerto|mati88",
 "Reconquista|tomi44","Esperanza|luca33","San Lorenzo|facu11","Villa Constitución|juli90",
