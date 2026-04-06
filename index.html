@@ -12,9 +12,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
       color: white;
+      overflow: hidden;
 
       background:
         linear-gradient(rgba(0, 80, 30, 0.75), rgba(0, 80, 30, 0.85)),
@@ -25,12 +26,13 @@
 
     .container {
       max-width: 420px;
-      padding: 20px;
+      width: 100%;
+      padding: 12px 20px 20px;
     }
 
     .logo-top {
-      max-width: 260px;
-      margin: -90px auto 10px;
+      max-width: 245px;
+      margin: -125px auto 8px;
       display: block;
     }
 
@@ -45,8 +47,7 @@
       filter: drop-shadow(0 0 12px rgba(0,0,0,0.7));
     }
 
-    /* TOAST */
-    .toast{
+    .toast {
       max-width: 320px;
       margin: 0 auto 14px;
       background: rgba(255,255,255,0.12);
@@ -58,43 +59,88 @@
       min-height: 72px;
     }
 
-    .stars{
+    .stars {
       color: #ffd76a;
       font-size: 16px;
       font-weight: bold;
-      margin-bottom: 2px; /* MÁS PEGADO */
+      margin-bottom: 2px;
     }
 
-    .city{
-      color: rgba(200,200,200,0.8); /* gris plata */
+    .city {
+      color: rgba(210,210,210,0.78);
       font-weight: 700;
       font-size: 13px;
       margin-bottom: 4px;
     }
 
-    .user{
+    .user {
       color: #fff;
       font-size: 14px;
     }
 
-    .label{
+    .label {
       font-weight: 900;
       color: #fff;
     }
 
-    .action{
+    .action {
       color: #00ff88;
       font-weight: 900;
     }
 
-    /* BARRA */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(180deg, #31e97b, #18b957);
+      color: white;
+      padding: 16px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 19px;
+      font-weight: 900;
+      margin: 8px 0 14px;
+      box-shadow:
+        0 0 0 0 rgba(37,211,102,0.75),
+        0 0 22px rgba(37,211,102,0.65),
+        0 8px 24px rgba(0,0,0,0.28);
+      transition: transform 0.2s ease;
+      animation: pulse 1.3s infinite;
+    }
+
+    .btn:hover {
+      transform: scale(1.06);
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow:
+          0 0 0 0 rgba(37,211,102,0.75),
+          0 0 22px rgba(37,211,102,0.65),
+          0 8px 24px rgba(0,0,0,0.28);
+      }
+      70% {
+        transform: scale(1.04);
+        box-shadow:
+          0 0 0 18px rgba(37,211,102,0),
+          0 0 30px rgba(37,211,102,0.75),
+          0 8px 24px rgba(0,0,0,0.28);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow:
+          0 0 0 0 rgba(37,211,102,0),
+          0 0 22px rgba(37,211,102,0.65),
+          0 8px 24px rgba(0,0,0,0.28);
+      }
+    }
+
     .progress-box {
       width: 100%;
       height: 12px;
       background: rgba(255,255,255,0.2);
       border-radius: 20px;
       overflow: hidden;
-      margin-top: 10px;
+      margin-top: 0;
     }
 
     .progress-bar {
@@ -110,7 +156,7 @@
     }
 
     .texto {
-      margin: 10px 0 16px;
+      margin: 10px 0 14px;
       font-size: 18px;
       font-weight: bold;
     }
@@ -119,33 +165,13 @@
       color: #ffd76a;
       font-weight: 900;
     }
-
-    .btn {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 10px 0 20px;
-      box-shadow: 0 0 18px rgba(37,211,102,0.7);
-      transition: transform 0.2s;
-    }
-
-    .btn:hover {
-      transform: scale(1.07);
-    }
-
   </style>
 </head>
 
 <body>
-
   <div class="container">
 
-    <img class="logo-top" src="logo.png">
+    <img class="logo-top" src="logo.png" alt="Majesty">
 
     <div class="toast">
       <div class="stars">★★★★★</div>
@@ -158,6 +184,12 @@
       </div>
     </div>
 
+    <a class="btn"
+       href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo%20🥳🎁%20codigo:%20al%20azar%20todo%20el%20tiempo"
+       target="_blank">
+       RECLAMAR BONO
+    </a>
+
     <div class="progress-box">
       <div class="progress-bar"></div>
     </div>
@@ -166,13 +198,7 @@
       Tiempo para reclamar el BONO del <span class="gold">30%</span>...
     </div>
 
-    <a class="btn"
-       href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo%20🥳🎁%20codigo:%20al%20azar%20todo%20el%20tiempo"
-       target="_blank">
-       RECLAMAR BONO
-    </a>
-
-    <img class="logo-bottom" src="logo2.png">
+    <img class="logo-bottom" src="logo2.png" alt="Logo inferior">
 
   </div>
 
@@ -206,6 +232,5 @@
       `;
     }, 2000);
   </script>
-
 </body>
 </html>
