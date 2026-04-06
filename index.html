@@ -49,7 +49,7 @@ body{
 .label{font-weight:900;}
 .action{color:#00ff88;font-weight:900;}
 
-/* BOTÓN */
+/* 🔥 BOTÓN */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -74,11 +74,10 @@ body{
   animation:pulse 1s infinite;
 }
 
-/* 🔥 ICONO FIX */
-.wsp-icon{
-  width:24px;
-  height:24px;
-  filter: brightness(0) invert(1); /* esto lo hace blanco SI O SI */
+.btn svg{
+  width:22px;
+  height:22px;
+  fill:white;
 }
 
 @keyframes pulse{
@@ -132,7 +131,6 @@ body{
   font-weight:900;
 }
 
-/* 🔥 CARDS CON BARRA (ARREGLADO) */
 .cards-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -153,7 +151,6 @@ body{
   object-fit:cover;
 }
 
-/* 🔥 BARRA NOMBRE */
 .slot-name{
   background:rgba(0,0,0,.5);
   padding:8px;
@@ -184,7 +181,10 @@ body{
 href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo"
 target="_blank">
 
-<img src="whatsapp.png" class="wsp-icon">
+<!-- 🔥 ICONO WHATSAPP SVG -->
+<svg viewBox="0 0 32 32">
+<path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.4 31.6l7.9-2.1c2.3 1.3 5 2.1 7.7 2.1 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.6c-2.4 0-4.7-.7-6.7-1.9l-.5-.3-4.7 1.2 1.2-4.6-.3-.5C4.1 20.9 3.4 18.5 3.4 16c0-6.9 5.6-12.6 12.6-12.6S28.6 9.1 28.6 16 23 29 16 29zm7.1-9.4c-.4-.2-2.3-1.1-2.7-1.2-.4-.2-.7-.2-1 .2s-1.1 1.2-1.4 1.4c-.3.2-.5.2-.9 0s-1.8-.7-3.4-2.2c-1.2-1.1-2-2.5-2.3-2.9-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6.1-.2 0-.5 0-.7s-1-2.5-1.3-3.4c-.3-.8-.6-.7-1-.7h-.9c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.3s1.4 3.8 1.6 4c.2.2 2.8 4.2 6.8 5.9 4 1.7 4 1.1 4.7 1 .7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5z"/>
+</svg>
 
 RECLAMAR BONO
 </a>
@@ -205,27 +205,10 @@ Tiempo para reclamar el BONO del <span class="gold">30%</span> ...
 </div>
 
 <div class="cards-grid">
-
-<div class="slot-card">
-<img src="slot1.png">
-<div class="slot-name">Spaceman</div>
-</div>
-
-<div class="slot-card">
-<img src="slot2.png">
-<div class="slot-name">Sweet Bonanza</div>
-</div>
-
-<div class="slot-card">
-<img src="slot3.png">
-<div class="slot-name">Gates of Olympus</div>
-</div>
-
-<div class="slot-card">
-<img src="slot4.png">
-<div class="slot-name">Big Bass</div>
-</div>
-
+<div class="slot-card"><img src="slot1.png"><div class="slot-name">Spaceman</div></div>
+<div class="slot-card"><img src="slot2.png"><div class="slot-name">Sweet Bonanza</div></div>
+<div class="slot-card"><img src="slot3.png"><div class="slot-name">Gates of Olympus</div></div>
+<div class="slot-card"><img src="slot4.png"><div class="slot-name">Big Bass</div></div>
 </div>
 
 </div>
