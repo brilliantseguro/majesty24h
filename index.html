@@ -16,7 +16,6 @@
         url('fondo.png');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
     }
 
     .container {
@@ -25,12 +24,10 @@
       padding: 18px 20px 30px;
     }
 
-    /* LOGO */
     .logo-top {
       max-width: 300px;
-      margin: 0 auto 16px;
+      margin: 0 auto 10px;
       display: block;
-      filter: drop-shadow(0 0 14px rgba(0,0,0,0.7));
     }
 
     .logo-bottom {
@@ -39,88 +36,64 @@
       display: block;
     }
 
-    /* TOAST */
+    /* 🔼 TOAST MÁS ARRIBA */
     .toast {
-      max-width: 320px;
-      margin: 0 auto 18px;
+      margin: -8px auto 14px;
       background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      padding: 12px 14px;
+      padding: 12px;
       border-radius: 14px;
-      backdrop-filter: blur(6px);
     }
 
-    .stars {
-      color: #ffd76a;
-      font-weight: bold;
-    }
+    .stars { color: #ffd76a; font-weight: bold; }
+    .city { color: rgba(210,210,210,0.8); font-size: 13px; }
+    .label { font-weight: 900; }
+    .action { color: #00ff88; font-weight: 900; }
 
-    .city {
-      color: rgba(210,210,210,0.8);
-      font-size: 13px;
-    }
-
-    .user {
-      font-size: 14px;
-    }
-
-    .label {
-      font-weight: 900;
-    }
-
-    .action {
-      color: #00ff88;
-      font-weight: 900;
-    }
-
-    /* BOTÓN ULTRA PRO */
+    /* 🔥 BOTÓN */
     .btn {
       display: inline-block;
       background: linear-gradient(180deg, #31e97b, #18b957);
-      color: white;
       padding: 16px 28px;
       border-radius: 999px;
-      font-size: 19px;
       font-weight: 900;
-      margin: 24px 0;
-      text-decoration: none;
-
+      margin: 20px 0;
       border: 3px solid #000;
-
-      box-shadow:
-        0 0 0 0 rgba(0,0,0,0.8),
-        0 0 25px rgba(37,211,102,0.9),
-        0 10px 30px rgba(0,0,0,0.5);
-
-      animation: pulse-strong 1s infinite;
+      animation: pulse 1s infinite;
     }
 
-    @keyframes pulse-strong {
-      0% { transform: scale(1); }
-      50% {
-        transform: scale(1.08);
-        box-shadow:
-          0 0 0 12px rgba(0,0,0,0),
-          0 0 45px rgba(37,211,102,1),
-          0 10px 30px rgba(0,0,0,0.6);
-      }
-      100% { transform: scale(1); }
+    @keyframes pulse {
+      50% { transform: scale(1.08); }
     }
 
-    /* BARRA */
+    /* 💎 BARRA 3D */
     .progress-box {
-      height: 12px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 20px;
+      position: relative;
+      height: 20px;
+      background: #1b1b1b;
+      border-radius: 25px;
       overflow: hidden;
       margin-top: 18px;
+      box-shadow:
+        inset 0 3px 6px rgba(0,0,0,0.6),
+        0 4px 10px rgba(0,0,0,0.4);
     }
 
     .progress-bar {
       height: 100%;
       width: 100%;
-      background: linear-gradient(90deg, #25D366, #00ff88);
+      background: linear-gradient(90deg,#00ff88,#25D366);
       animation: countdown 30s linear forwards;
+    }
+
+    /* ⏳ CONTADOR */
+    .timer {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      font-size: 13px;
+      font-weight: bold;
+      line-height: 20px;
     }
 
     @keyframes countdown {
@@ -128,41 +101,21 @@
       to { width: 0%; }
     }
 
-    .texto {
-      margin: 16px 0;
-      font-weight: bold;
-    }
-
-    .gold {
-      color: #ffd76a;
-    }
-
-    /* CARDS */
-    .cards-section {
-      margin-top: 22px;
-    }
+    .texto { margin: 10px; }
+    .gold { color: #ffd76a; }
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .slot-card {
-      background: rgba(255,255,255,0.1);
-      border-radius: 16px;
-      overflow: hidden;
+      grid-template-columns: repeat(2,1fr);
+      gap: 10px;
+      margin-top: 20px;
     }
 
     .slot-card img {
       width: 100%;
-      height: 120px;
+      height: 110px;
       object-fit: cover;
-    }
-
-    .slot-name {
-      padding: 10px;
-      font-weight: 800;
+      border-radius: 10px;
     }
 
   </style>
@@ -170,47 +123,53 @@
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <img class="logo-top" src="logo.png">
+  <img class="logo-top" src="logo.png">
 
-    <div class="toast">
-      <div class="stars">★★★★★</div>
-      <div id="toastText">
-        <div class="city">Rosario</div>
-        <div class="user">
-          <span class="label">usuario:</span> neominb31
-          <span class="action"> está reclamando el bono</span>
-        </div>
+  <div class="toast">
+    <div class="stars">★★★★★</div>
+    <div id="toastText">
+      <div class="city">Rosario</div>
+      <div>
+        <span class="label">usuario:</span> neominb31
+        <span class="action"> está reclamando el bono</span>
       </div>
     </div>
-
-    <a class="btn"
-       href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo"
-       target="_blank">
-       RECLAMAR BONO
-    </a>
-
-    <div class="progress-box">
-      <div class="progress-bar"></div>
-    </div>
-
-    <div class="texto">
-      BONO del <span class="gold">30%</span>
-    </div>
-
-    <img class="logo-bottom" src="logo2.png">
-
-    <div class="cards-section">
-      <div class="cards-grid">
-        <div class="slot-card"><img src="slot1.png"><div class="slot-name">Spaceman</div></div>
-        <div class="slot-card"><img src="slot2.png"><div class="slot-name">Sweet Bonanza</div></div>
-        <div class="slot-card"><img src="slot3.png"><div class="slot-name">Gates</div></div>
-        <div class="slot-card"><img src="slot4.png"><div class="slot-name">Big Bass</div></div>
-      </div>
-    </div>
-
   </div>
+
+  <a class="btn" href="#">RECLAMAR BONO</a>
+
+  <div class="progress-box">
+    <div class="progress-bar"></div>
+    <div class="timer" id="timer">30s</div>
+  </div>
+
+  <div class="texto">
+    BONO del <span class="gold">30%</span>
+  </div>
+
+  <img class="logo-bottom" src="logo2.png">
+
+  <div class="cards-grid">
+    <div class="slot-card"><img src="slot1.png"></div>
+    <div class="slot-card"><img src="slot2.png"></div>
+    <div class="slot-card"><img src="slot3.png"></div>
+    <div class="slot-card"><img src="slot4.png"></div>
+  </div>
+
+</div>
+
+<script>
+let tiempo = 30;
+const timer = document.getElementById("timer");
+
+setInterval(()=>{
+  tiempo--;
+  if(tiempo <= 0) tiempo = 0;
+  timer.textContent = tiempo + "s";
+},1000);
+</script>
 
 </body>
 </html>
