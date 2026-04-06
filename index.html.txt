@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 24px;
+    }
+    .box {
+      max-width: 420px;
+      width: 100%;
+      background: #1b1b1b;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+    }
+    p {
+      margin: 0 0 24px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+    .btn {
+      display: inline-block;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Contacto directo</h1>
+    <p>Hacé clic en el botón para hablar por WhatsApp.</p>
+    <a class="btn" href="https://wa.me/543413673831?text=Hola%2C%20vengo%20desde%20Instagram%20y%20quiero%20m%C3%A1s%20info." target="_blank">
+      Ir a WhatsApp
+    </a>
+  </div>
+</body>
+</html>
