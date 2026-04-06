@@ -155,7 +155,25 @@
       color: #ffd76a;
       font-size: 16px;
       font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .city{
+      color: orange;
+      font-weight: 800;
+      font-size: 14px;
       margin-bottom: 4px;
+    }
+
+    .user{
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .action{
+      color: #00ff88;
+      font-weight: 900;
     }
 
     .msg{
@@ -213,17 +231,29 @@
 
 <script>
 const mensajes = [
-  "<span class='city'>Rosario</span> usuario: neominb31 <span class='action'>está reclamando el bono</span>",
-  "<span class='city'>Santa Fe Capital</span> usuario: marianb43 <span class='action'>está reclamando el bono</span>",
-  "<span class='city'>Rafaela</span> usuario: lucasnb41 <span class='action'>está reclamando el bono</span>",
-  "<span class='city'>Venado Tuerto</span> usuario: agus_87 <span class='action'>está reclamando el bono</span>",
-  "<span class='city'>Cañada de Gómez</span> usuario: fede77 <span class='action'>está reclamando el bono</span>",
-  "<span class='city'>Reconquista</span> usuario: tino44 <span class='action'>está reclamando el bono</span>",
-  "<span class='city'>Esperanza</span> usuario: roxii91 <span class='action'>está reclamando el bono</span>",
-  "<span class='city'>San Lorenzo</span> usuario: mati88 <span class='action'>está reclamando el bono</span>",
-  "<span class='city'>Villa Constitución</span> usuario: juanp33 <span class='action'>está reclamando el bono</span>",
-  "<span class='city'>Santo Tomé</span> usuario: luli29 <span class='action'>está reclamando el bono</span>"
+  {city:"Rosario", user:"neominb31"},
+  {city:"Santa Fe Capital", user:"marianb43"},
+  {city:"Rafaela", user:"lucasnb41"},
+  {city:"Venado Tuerto", user:"agus_87"},
+  {city:"Cañada de Gómez", user:"fede77"},
+  {city:"Reconquista", user:"tino44"},
+  {city:"Esperanza", user:"roxii91"},
+  {city:"San Lorenzo", user:"mati88"},
+  {city:"Villa Constitución", user:"juanp33"},
+  {city:"Santo Tomé", user:"luli29"}
 ];
+
+let i = 0;
+const toastText = document.getElementById("toastText");
+
+setInterval(() => {
+  i = (i + 1) % mensajes.length;
+  const data = mensajes[i];
+  toastText.innerHTML = `
+    <div class="city">${data.city}</div>
+    <div class="user">usuario: ${data.user} <span class="action">está reclamando el bono</span></div>
+  `;
+}, 2000);
 
 let i = 0;
 const toastText = document.getElementById("toastText");
