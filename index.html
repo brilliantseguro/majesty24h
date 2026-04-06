@@ -1,168 +1,53 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Majesty</title>
+<div class="toast" id="toast">
+  <div class="stars">★★★★★</div>
+  <div class="msg" id="toastText">Nuevo contacto desde Rosario, Santa Fe</div>
+</div>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      color: white;
+<style>
+.toast{
+  max-width: 320px;
+  margin: 0 auto 14px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  min-height: 62px;
+}
+.stars{
+  color: #ffd76a;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.msg{
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+</style>
 
-      background:
-        linear-gradient(rgba(0, 80, 30, 0.75), rgba(0, 80, 30, 0.85)),
-        url('fondo.png');
-      background-size: cover;
-      background-position: center;
-    }
+<script>
+const mensajes = [
+  "Nuevo contacto desde Rosario, Santa Fe",
+  "Consulta activa desde Santa Fe Capital",
+  "Usuario conectado desde Rafaela",
+  "Nueva visita desde Venado Tuerto",
+  "Contacto recibido desde Cañada de Gómez",
+  "Actividad reciente desde Reconquista",
+  "Nueva consulta desde Esperanza",
+  "Usuario online desde San Lorenzo",
+  "Contacto nuevo desde Villa Constitución",
+  "Visita activa desde Santo Tomé"
+];
 
-    .container {
-      max-width: 420px;
-      padding: 20px;
-    }
+let i = 0;
+const toastText = document.getElementById("toastText");
 
-    img {
-      width: 100%;
-      max-width: 320px;
-      margin: 20px 0;
-      filter: drop-shadow(0 0 12px rgba(0,0,0,0.7));
-    }
-
-    .logo-top {
-      max-width: 280px; /* apenas más chico */
-      margin: -70px 0 6px; /* lo más arriba posible */
-      display:block;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .logo-bottom {
-      max-width: 160px;
-      margin: 18px auto 0;
-      display: block;
-    }
-
-    /* BARRA DE TIEMPO */
-    .bonus {
-      font-size: 64px;
-      font-weight: 900;
-      line-height: 1;
-      margin: 4px 0 12px;
-      color: #ffd76a;
-      text-shadow:
-        0 1px 0 #fff2b8,
-        0 2px 0 #f5c94a,
-        0 3px 0 #d69d1d,
-        0 4px 0 #a86f00,
-        0 8px 14px rgba(0,0,0,0.45);
-      letter-spacing: -2px;
-    }
-
-    .progress-box {
-      width: 100%;
-      height: 12px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 20px;
-      overflow: hidden;
-      margin-top: 10px;
-    }
-
-    .progress-bar {
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(90deg, #25D366, #00ff88);
-      animation: countdown 30s linear forwards;
-    }
-
-    @keyframes countdown {
-      from { width: 100%; }
-      to { width: 0%; }
-    }
-
-    .texto {
-      margin: 10px 0 16px;
-      font-size: 18px;
-      font-weight: bold;
-      text-shadow: 0 0 6px rgba(0,0,0,0.6);
-      line-height: 1.4;
-    }
-
-    .texto .gold {
-      color: #ffd76a;
-      font-weight: 900;
-      font-size: 20px;
-      display: inline-block;
-      line-height: 1;
-      letter-spacing: -1px;
-      text-shadow:
-        0 1px 0 #fff2b8,
-        0 2px 2px rgba(0,0,0,0.35);
-    }
-
-    .texto .gold {
-      color: #ffd76a;
-      font-weight: 900;
-      font-size: 22px;
-      text-shadow:
-        0 1px 0 #fff2b8,
-        0 2px 0 #f5c94a,
-        0 3px 0 #d69d1d,
-        0 6px 10px rgba(0,0,0,0.5);
-    }
-
-    .btn {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 10px 0 20px;
-      box-shadow: 0 0 18px rgba(37,211,102,0.7);
-      transition: transform 0.2s;
-    }
-
-    .btn:hover {
-      transform: scale(1.07);
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="container">
-
-    <!-- LOGO ARRIBA -->
-    <img class="logo-top" src="logo.png" alt="Majesty">
-
-    <!-- BARRA -->
-    <div class="progress-box">
-      <div class="progress-bar"></div>
-    </div>
-
-    <!-- TEXTO -->
-    <div class="texto">Tiempo para reclamar el BONO del <span class="gold">30%</span>...</div>
-
-    <!-- BOTÓN -->
-    <a class="btn"
-       href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo%20🥳🎁%20codigo:%20al%20azar%20todo%20el%20tiempo"
-       target="_blank">
-       RECLAMAR BONO
-    </a>
-
-    <!-- LOGO ABAJO -->
-    <img class="logo-bottom" src="logo2.png" alt="Ganamos">
-
-  </div>
-
-</body>
-</html>
+setInterval(() => {
+  i = (i + 1) % mensajes.length;
+  toastText.textContent = mensajes[i];
+}, 2500);
+</script>
