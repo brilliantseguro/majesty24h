@@ -51,7 +51,6 @@
       margin: 0 auto 14px;
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.18);
-      color: #fff;
       padding: 12px 14px;
       border-radius: 14px;
       backdrop-filter: blur(6px);
@@ -63,20 +62,24 @@
       color: #ffd76a;
       font-size: 16px;
       font-weight: bold;
-      margin-bottom: 6px;
+      margin-bottom: 2px; /* MÁS PEGADO */
     }
 
     .city{
-      color: #ff9f1a;
-      font-weight: 800;
-      font-size: 14px;
+      color: rgba(200,200,200,0.8); /* gris plata */
+      font-weight: 700;
+      font-size: 13px;
       margin-bottom: 4px;
     }
 
     .user{
       color: #fff;
-      font-weight: 700;
       font-size: 14px;
+    }
+
+    .label{
+      font-weight: 900;
+      color: #fff;
     }
 
     .action{
@@ -142,39 +145,33 @@
 
   <div class="container">
 
-    <!-- LOGO ARRIBA -->
     <img class="logo-top" src="logo.png">
 
-    <!-- TOAST -->
     <div class="toast">
       <div class="stars">★★★★★</div>
       <div id="toastText">
         <div class="city">Rosario</div>
         <div class="user">
-          usuario: neominb31 
-          <span class="action">está reclamando el bono</span>
+          <span class="label">usuario:</span> neominb31
+          <span class="action"> está reclamando el bono</span>
         </div>
       </div>
     </div>
 
-    <!-- BARRA -->
     <div class="progress-box">
       <div class="progress-bar"></div>
     </div>
 
-    <!-- TEXTO -->
     <div class="texto">
       Tiempo para reclamar el BONO del <span class="gold">30%</span>...
     </div>
 
-    <!-- BOTÓN -->
     <a class="btn"
        href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo%20🥳🎁%20codigo:%20al%20azar%20todo%20el%20tiempo"
        target="_blank">
        RECLAMAR BONO
     </a>
 
-    <!-- LOGO ABAJO -->
     <img class="logo-bottom" src="logo2.png">
 
   </div>
@@ -203,7 +200,7 @@
       toastText.innerHTML = `
         <div class="city">${data.city}</div>
         <div class="user">
-          usuario: ${data.user}
+          <span class="label">usuario:</span> ${data.user}
           <span class="action"> está reclamando el bono</span>
         </div>
       `;
