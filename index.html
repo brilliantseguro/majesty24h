@@ -36,8 +36,11 @@
     }
 
     .logo-top {
-      max-width: 320px;
-      margin: -40px 0 10px; /* subido ~30px */
+      max-width: 280px; /* apenas más chico */
+      margin: -70px 0 6px; /* lo más arriba posible */
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
     }
 
     .logo-bottom {
@@ -84,10 +87,23 @@
     }
 
     .texto {
-      margin: 12px 0 18px;
+      margin: 10px 0 16px;
       font-size: 18px;
       font-weight: bold;
-      text-shadow: 0 0 8px rgba(0,0,0,0.6);
+      text-shadow: 0 0 6px rgba(0,0,0,0.6);
+      line-height: 1.4;
+    }
+
+    .texto .gold {
+      color: #ffd76a;
+      font-weight: 900;
+      font-size: 20px;
+      display: inline-block;
+      line-height: 1;
+      letter-spacing: -1px;
+      text-shadow:
+        0 1px 0 #fff2b8,
+        0 2px 2px rgba(0,0,0,0.35);
     }
 
     .texto .gold {
