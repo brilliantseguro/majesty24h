@@ -35,7 +35,33 @@
       filter: drop-shadow(0 0 12px rgba(0,0,0,0.7));
     }
 
+    .logo-top {
+      max-width: 320px;
+      margin: -10px 0 10px;
+    }
+
+    .logo-bottom {
+      max-width: 160px;
+      margin: 18px auto 0;
+      display: block;
+    }
+
     /* BARRA DE TIEMPO */
+    .bonus {
+      font-size: 64px;
+      font-weight: 900;
+      line-height: 1;
+      margin: 4px 0 12px;
+      color: #ffd76a;
+      text-shadow:
+        0 1px 0 #fff2b8,
+        0 2px 0 #f5c94a,
+        0 3px 0 #d69d1d,
+        0 4px 0 #a86f00,
+        0 8px 14px rgba(0,0,0,0.45);
+      letter-spacing: -2px;
+    }
+
     .progress-box {
       width: 100%;
       height: 12px;
@@ -89,7 +115,9 @@
   <div class="container">
 
     <!-- LOGO ARRIBA -->
-    <img src="logo.png" alt="Majesty">
+    <img class="logo-top" src="logo.png" alt="Majesty">
+
+    <div class="bonus">30%</div>
 
     <!-- BARRA -->
     <div class="progress-box">
@@ -107,7 +135,7 @@
     </a>
 
     <!-- LOGO ABAJO -->
-    <img src="logo2.png" alt="Ganamos">
+    <img class="logo-bottom" src="logo2.png" alt="Ganamos">
 
   </div>
 
