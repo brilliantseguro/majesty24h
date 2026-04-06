@@ -15,7 +15,6 @@
       min-height: 100vh;
       text-align: center;
       color: white;
-      overflow: hidden;
 
       background:
         linear-gradient(rgba(0, 80, 30, 0.75), rgba(0, 80, 30, 0.85)),
@@ -27,21 +26,21 @@
     .container {
       max-width: 420px;
       width: 100%;
-      padding: 12px 20px 20px;
+      padding: 12px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
     }
 
-    /* LOGO ARRIBA */
     .logo-top {
       max-width: 245px;
-      margin: -175px auto 12px; /* SUBIDO 50PX */
-      display: block;
+      margin: -175px auto 12px;
     }
 
-    /* LOGO ABAJO */
     .logo-bottom {
       max-width: 160px;
-      margin: 48px auto 0; /* BAJADO 30PX */
-      display: block;
+      margin: auto auto 10px;
     }
 
     img {
@@ -49,7 +48,6 @@
       filter: drop-shadow(0 0 12px rgba(0,0,0,0.7));
     }
 
-    /* TOAST */
     .toast {
       max-width: 320px;
       margin: 0 auto 14px;
@@ -59,7 +57,6 @@
       border-radius: 14px;
       backdrop-filter: blur(6px);
       box-shadow: 0 8px 20px rgba(0,0,0,.25);
-      min-height: 72px;
     }
 
     .stars {
@@ -83,7 +80,6 @@
 
     .label {
       font-weight: 900;
-      color: #fff;
     }
 
     .action {
@@ -91,27 +87,17 @@
       font-weight: 900;
     }
 
-    /* BOTÓN */
     .btn {
       display: inline-block;
       background: linear-gradient(180deg, #31e97b, #18b957);
       color: white;
       padding: 16px 28px;
       border-radius: 999px;
-      text-decoration: none;
       font-size: 19px;
       font-weight: 900;
-      margin: 22px 0 22px; /* MÁS ESPACIO ARRIBA Y ABAJO */
-      box-shadow:
-        0 0 0 0 rgba(37,211,102,0.75),
-        0 0 22px rgba(37,211,102,0.65),
-        0 8px 24px rgba(0,0,0,0.28);
-      transition: transform 0.2s ease;
+      margin: 22px 0;
+      text-decoration: none;
       animation: pulse 1.3s infinite;
-    }
-
-    .btn:hover {
-      transform: scale(1.06);
     }
 
     @keyframes pulse {
@@ -120,13 +106,13 @@
       100% { transform: scale(1); }
     }
 
-    /* BARRA */
     .progress-box {
       width: 100%;
       height: 12px;
       background: rgba(255,255,255,0.2);
       border-radius: 20px;
       overflow: hidden;
+      margin-top: 15px; /* BAJADA */
     }
 
     .progress-bar {
@@ -147,7 +133,7 @@
       font-weight: bold;
     }
 
-    .texto .gold {
+    .gold {
       color: #ffd76a;
       font-weight: 900;
     }
@@ -158,33 +144,36 @@
 
   <div class="container">
 
-    <img class="logo-top" src="logo.png">
+    <div>
+      <img class="logo-top" src="logo.png">
 
-    <div class="toast">
-      <div class="stars">★★★★★</div>
-      <div id="toastText">
-        <div class="city">Rosario</div>
-        <div class="user">
-          <span class="label">usuario:</span> neominb31
-          <span class="action"> está reclamando el bono</span>
+      <div class="toast">
+        <div class="stars">★★★★★</div>
+        <div id="toastText">
+          <div class="city">Rosario</div>
+          <div class="user">
+            <span class="label">usuario:</span> neominb31
+            <span class="action"> está reclamando el bono</span>
+          </div>
         </div>
+      </div>
+
+      <a class="btn"
+         href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo%20🥳🎁%20codigo:%20al%20azar%20todo%20el%20tiempo"
+         target="_blank">
+         RECLAMAR BONO
+      </a>
+
+      <div class="progress-box">
+        <div class="progress-bar"></div>
+      </div>
+
+      <div class="texto">
+        Tiempo para reclamar el BONO del <span class="gold">30%</span>...
       </div>
     </div>
 
-    <a class="btn"
-       href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo%20🥳🎁%20codigo:%20al%20azar%20todo%20el%20tiempo"
-       target="_blank">
-       RECLAMAR BONO
-    </a>
-
-    <div class="progress-box">
-      <div class="progress-bar"></div>
-    </div>
-
-    <div class="texto">
-      Tiempo para reclamar el BONO del <span class="gold">30%</span>...
-    </div>
-
+    <!-- LOGO ABAJO -->
     <img class="logo-bottom" src="logo2.png">
 
   </div>
@@ -195,7 +184,6 @@
       {city:"Santa Fe Capital", user:"marianb43"},
       {city:"Rafaela", user:"lucasnb41"},
       {city:"Venado Tuerto", user:"agus_87"},
-      {city:"Cañada de Gómez", user:"fede77"},
       {city:"Reconquista", user:"tino44"},
       {city:"Esperanza", user:"roxii91"},
       {city:"San Lorenzo", user:"mati88"},
