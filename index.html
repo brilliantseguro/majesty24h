@@ -1,173 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Majesty</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Majesty</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-      background:
-        linear-gradient(rgba(0, 80, 30, 0.75), rgba(0, 80, 30, 0.85)),
-        url('fondo.png');
-      background-size: cover;
-      background-position: center;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  color:white;
+  text-align:center;
+  background:
+  linear-gradient(rgba(0,80,30,.75),rgba(0,80,30,.85)),
+  url('fondo.png');
+  background-size:cover;
+}
 
-    .container {
-      max-width: 420px;
-      margin: 0 auto;
-      padding: 18px 20px 30px;
-    }
+.container{
+  max-width:420px;
+  margin:auto;
+  padding:18px 20px 30px;
+}
 
-    .logo-top {
-      max-width: 300px;
-      margin: 0 auto 10px;
-      display: block;
-    }
+.logo-top{
+  max-width:300px;
+  margin:0 auto 10px;
+  display:block;
+}
 
-    .logo-bottom {
-      max-width: 160px;
-      margin: 50px auto 20px;
-      display: block;
-    }
+.logo-bottom{
+  max-width:160px;
+  margin:50px auto 20px;
+  display:block;
+}
 
-    /* 🔼 TOAST MÁS ARRIBA */
-    .toast {
-      margin: -8px auto 14px;
-      background: rgba(255,255,255,0.12);
-      padding: 12px;
-      border-radius: 14px;
-    }
+/* TOAST */
+.toast{
+  margin:-8px auto 14px;
+  background:rgba(255,255,255,.12);
+  padding:12px;
+  border-radius:14px;
+}
 
-    .stars { color: #ffd76a; font-weight: bold; }
-    .city { color: rgba(210,210,210,0.8); font-size: 13px; }
-    .label { font-weight: 900; }
-    .action { color: #00ff88; font-weight: 900; }
+.stars{color:#ffd76a;font-weight:bold;}
+.city{color:rgba(210,210,210,.8);font-size:13px;}
+.label{font-weight:900;}
+.action{color:#00ff88;font-weight:900;}
 
-    /* 🔥 BOTÓN */
-    .btn {
-      display: inline-block;
-      background: linear-gradient(180deg, #31e97b, #18b957);
-      padding: 16px 28px;
-      border-radius: 999px;
-      font-weight: 900;
-      margin: 20px 0;
-      border: 3px solid #000;
-      animation: pulse 1s infinite;
-    }
+/* 🔥 BOTON CORREGIDO */
+.btn{
+  display:inline-block;
+  background:linear-gradient(180deg,#31e97b,#18b957);
+  color:#fff;
+  padding:16px 28px;
+  border-radius:999px;
+  font-weight:900;
+  margin:22px 0;
+  text-decoration:none;
 
-    @keyframes pulse {
-      50% { transform: scale(1.08); }
-    }
+  border:3px solid #000;
 
-    /* 💎 BARRA 3D */
-    .progress-box {
-      position: relative;
-      height: 20px;
-      background: #1b1b1b;
-      border-radius: 25px;
-      overflow: hidden;
-      margin-top: 18px;
-      box-shadow:
-        inset 0 3px 6px rgba(0,0,0,0.6),
-        0 4px 10px rgba(0,0,0,0.4);
-    }
+  box-shadow:
+  0 0 25px rgba(37,211,102,.9),
+  0 10px 30px rgba(0,0,0,.5);
 
-    .progress-bar {
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(90deg,#00ff88,#25D366);
-      animation: countdown 30s linear forwards;
-    }
+  animation:pulse 1s infinite;
+}
 
-    /* ⏳ CONTADOR */
-    .timer {
-      position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      font-size: 13px;
-      font-weight: bold;
-      line-height: 20px;
-    }
+@keyframes pulse{
+  50%{transform:scale(1.08);}
+}
 
-    @keyframes countdown {
-      from { width: 100%; }
-      to { width: 0%; }
-    }
+/* BARRA 3D */
+.progress-box{
+  position:relative;
+  height:22px;
+  background:#1b1b1b;
+  border-radius:25px;
+  overflow:hidden;
+  margin-top:18px;
+  box-shadow:
+  inset 0 3px 6px rgba(0,0,0,.6),
+  0 4px 10px rgba(0,0,0,.4);
+}
 
-    .texto { margin: 10px; }
-    .gold { color: #ffd76a; }
+.progress-bar{
+  height:100%;
+  width:100%;
+  background:linear-gradient(90deg,#00ff88,#25D366);
+  animation:countdown 30s linear forwards;
+}
 
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 10px;
-      margin-top: 20px;
-    }
+.timer{
+  position:absolute;
+  width:100%;
+  top:0;
+  left:0;
+  line-height:22px;
+  font-size:13px;
+  font-weight:bold;
+}
 
-    .slot-card img {
-      width: 100%;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+@keyframes countdown{
+  from{width:100%;}
+  to{width:0%;}
+}
 
-  </style>
+/* TEXTO */
+.texto{
+  margin:12px 0;
+  font-weight:bold;
+}
+
+.gold{
+  color:#ffd76a;
+}
+
+/* CARDS */
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+
+.slot-card img{
+  width:100%;
+  height:110px;
+  object-fit:cover;
+  border-radius:10px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <img class="logo-top" src="logo.png">
+<img class="logo-top" src="logo.png">
 
-  <div class="toast">
-    <div class="stars">★★★★★</div>
-    <div id="toastText">
-      <div class="city">Rosario</div>
-      <div>
-        <span class="label">usuario:</span> neominb31
-        <span class="action"> está reclamando el bono</span>
-      </div>
-    </div>
-  </div>
+<div class="toast">
+<div class="stars">★★★★★</div>
+<div id="toastText">
+<div class="city">Rosario</div>
+<div>
+<span class="label">usuario:</span> neominb31
+<span class="action"> está reclamando el bono</span>
+</div>
+</div>
+</div>
 
-  <a class="btn" href="#">RECLAMAR BONO</a>
+<a class="btn"
+href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo"
+target="_blank">
+RECLAMAR BONO
+</a>
 
-  <div class="progress-box">
-    <div class="progress-bar"></div>
-    <div class="timer" id="timer">30s</div>
-  </div>
+<div class="progress-box">
+<div class="progress-bar"></div>
+<div class="timer" id="timer">30s</div>
+</div>
 
-  <div class="texto">
-    BONO del <span class="gold">30%</span>
-  </div>
+<div class="texto">
+Tiempo para reclamar el BONO del <span class="gold">30%</span> ...
+</div>
 
-  <img class="logo-bottom" src="logo2.png">
+<img class="logo-bottom" src="logo2.png">
 
-  <div class="cards-grid">
-    <div class="slot-card"><img src="slot1.png"></div>
-    <div class="slot-card"><img src="slot2.png"></div>
-    <div class="slot-card"><img src="slot3.png"></div>
-    <div class="slot-card"><img src="slot4.png"></div>
-  </div>
+<div class="cards-grid">
+<div class="slot-card"><img src="slot1.png"></div>
+<div class="slot-card"><img src="slot2.png"></div>
+<div class="slot-card"><img src="slot3.png"></div>
+<div class="slot-card"><img src="slot4.png"></div>
+</div>
 
 </div>
 
 <script>
-let tiempo = 30;
-const timer = document.getElementById("timer");
-
+let t=30;
 setInterval(()=>{
-  tiempo--;
-  if(tiempo <= 0) tiempo = 0;
-  timer.textContent = tiempo + "s";
+t--;
+if(t<=0)t=0;
+document.getElementById("timer").innerText=t+"s";
 },1000);
 </script>
 
