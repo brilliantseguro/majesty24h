@@ -26,7 +26,7 @@ body{
 
 /* LOGOS */
 .logo-top{
-  max-width:240px;
+  max-width:300px;
   margin:0 auto 10px;
   display:block;
 }
@@ -48,10 +48,20 @@ body{
 }
 
 .city{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
   color:rgba(210,210,210,.85);
   font-size:13px;
   margin-bottom:4px;
   font-weight:700;
+}
+
+.city svg{
+  width:14px;
+  height:14px;
+  fill:#ffcc66;
 }
 
 .stars{
@@ -97,24 +107,9 @@ body{
 }
 
 @keyframes pulse{
-  0%{
-    transform:scale(1);
-    box-shadow:
-      0 0 22px rgba(37,211,102,.95),
-      0 10px 25px rgba(0,0,0,.28);
-  }
-  50%{
-    transform:scale(1.11);
-    box-shadow:
-      0 0 32px rgba(37,211,102,1),
-      0 12px 28px rgba(0,0,0,.32);
-  }
-  100%{
-    transform:scale(1);
-    box-shadow:
-      0 0 22px rgba(37,211,102,.95),
-      0 10px 25px rgba(0,0,0,.28);
-  }
+  0%{transform:scale(1);}
+  50%{transform:scale(1.11);}
+  100%{transform:scale(1);}
 }
 
 /* BARRA */
@@ -132,9 +127,6 @@ body{
       rgba(255,255,255,.03) 8px,
       rgba(255,255,255,.03) 16px
     );
-  box-shadow:
-    inset 0 2px 5px rgba(0,0,0,.28),
-    0 4px 10px rgba(0,0,0,.20);
   border:1px solid rgba(255,255,255,.10);
 }
 
@@ -156,8 +148,6 @@ body{
   line-height:22px;
   font-size:13px;
   font-weight:bold;
-  text-shadow:0 1px 2px rgba(0,0,0,.5);
-  z-index:2;
 }
 
 @keyframes countdown{
@@ -169,10 +159,6 @@ body{
 .texto{
   margin:12px 0;
   font-size:16px;
-}
-
-.texto strong{
-  font-weight:900;
 }
 
 .gold{
@@ -190,7 +176,6 @@ body{
 .slots-subtitle{
   margin-top:4px;
   font-size:13px;
-  color:rgba(255,255,255,.9);
 }
 
 .cards-grid{
@@ -211,7 +196,6 @@ body{
   width:100%;
   height:110px;
   object-fit:cover;
-  display:block;
 }
 
 .slot-name{
@@ -227,123 +211,54 @@ body{
 
 <div class="container">
 
-  <img class="logo-top" src="logo.png" alt="Majesty">
+<img class="logo-top" src="logo.png">
 
-  <div class="toast">
-    <div id="toastText">
-      <div class="city">Rosario</div>
-      <div class="stars">★★★★★</div>
-      <div>
-        <span class="label">usuario:</span> neominb31
-        <span class="action"> está reclamando el bono</span>
-      </div>
-    </div>
-  </div>
-
-  <a class="btn"
-     href="https://wa.me/543413673831?text=Holaa%20vengo%20a%20jug4r%20con%20mi%2030%25%20EXTRA%20por%20parte%20de%20Noraly%20Barrionuevo"
-     target="_blank">
-
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.4 31.6l7.9-2.1c2.3 1.3 5 2.1 7.7 2.1 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.6c-2.4 0-4.7-.7-6.7-1.9l-.5-.3-4.7 1.2 1.2-4.6-.3-.5C4.1 20.9 3.4 18.5 3.4 16c0-6.9 5.6-12.6 12.6-12.6S28.6 9.1 28.6 16 23 29 16 29zm7.1-9.4c-.4-.2-2.3-1.1-2.7-1.2-.4-.2-.7-.2-1 .2s-1.1 1.2-1.4 1.4c-.3.2-.5.2-.9 0s-1.8-.7-3.4-2.2c-1.2-1.1-2-2.5-2.3-2.9-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6.1-.2 0-.5 0-.7s-1-2.5-1.3-3.4c-.3-.8-.6-.7-1-.7h-.9c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.3s1.4 3.8 1.6 4c.2.2 2.8 4.2 6.8 5.9 4 1.7 4 1.1 4.7 1 .7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.4-.3-.8-.5z"/>
-    </svg>
-
-    RECLAMAR BONO
-  </a>
-
-  <div class="progress-box">
-    <div class="progress-bar"></div>
-    <div class="timer" id="timer">30s</div>
-  </div>
-
-  <div class="texto">
-    Tiempo para reclamar el <strong>BONO</strong> del <span class="gold"><strong>30%</strong></span> ...
-  </div>
-
-  <img class="logo-bottom" src="logo2.png" alt="Ganamos">
-
-  <div class="slots-title">
-    +3.000 SLOTS
-  </div>
-
-  <div class="slots-subtitle">
-    Recomendados de la semana:
-  </div>
-
-  <div class="cards-grid">
-    <div class="slot-card">
-      <img src="slot1.png" alt="Spaceman">
-      <div class="slot-name">Spaceman</div>
-    </div>
-
-    <div class="slot-card">
-      <img src="slot2.png" alt="Sweet Bonanza">
-      <div class="slot-name">Sweet Bonanza</div>
-    </div>
-
-    <div class="slot-card">
-      <img src="slot3.png" alt="Gates of Olympus">
-      <div class="slot-name">Gates of Olympus</div>
-    </div>
-
-    <div class="slot-card">
-      <img src="slot4.png" alt="Big Bass">
-      <div class="slot-name">Big Bass</div>
-    </div>
-  </div>
-
+<div class="toast">
+<div id="toastText">
+<div class="city">
+<!-- 📍 ICONO UBICACION -->
+<svg viewBox="0 0 24 24">
+<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+</svg>
+Rosario
+</div>
+<div class="stars">★★★★★</div>
+<div>
+<span class="label">usuario:</span> neominb31
+<span class="action"> está reclamando el bono</span>
+</div>
+</div>
 </div>
 
-<script>
-let t = 30;
-setInterval(() => {
-  t--;
-  if (t <= 0) t = 0;
-  document.getElementById("timer").innerText = t + "s";
-}, 1000);
+<a class="btn" href="#">
+<svg viewBox="0 0 32 32">
+<path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.4 31.6l7.9-2.1c2.3 1.3 5 2.1 7.7 2.1 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4z"/>
+</svg>
+RECLAMAR BONO
+</a>
 
-let mensajes = [
-  {city:"Rosario", user:"neominb31"},
-  {city:"Santa Fe Capital", user:"marianb43"},
-  {city:"Rafaela", user:"lucasnb41"},
-  {city:"Venado Tuerto", user:"agus_87"},
-  {city:"Reconquista", user:"tino44"},
-  {city:"Esperanza", user:"roxii91"},
-  {city:"San Lorenzo", user:"mati88"},
-  {city:"Villa Constitución", user:"juanp33"},
-  {city:"Santo Tomé", user:"luli29"},
-  {city:"Rosario", user:"facu77"},
-  {city:"Rafaela", user:"camii84"},
-  {city:"Santa Fe Capital", user:"brunozz19"},
-  {city:"Venado Tuerto", user:"nachoo31"},
-  {city:"Esperanza", user:"mili_ok"},
-  {city:"Reconquista", user:"tomas_88"},
-  {city:"San Lorenzo", user:"agusita22"},
-  {city:"Villa Constitución", user:"jerex44"},
-  {city:"Santo Tomé", user:"vale91"},
-  {city:"Rosario", user:"frannb7"},
-  {city:"Rafaela", user:"luucasx9"}
-];
+<div class="progress-box">
+<div class="progress-bar"></div>
+<div class="timer" id="timer">30s</div>
+</div>
 
-mensajes = mensajes.sort(() => Math.random() - 0.5);
+<div class="texto">
+Tiempo para reclamar el <strong>BONO</strong> del <span class="gold">30%</span> ...
+</div>
 
-let i = 0;
-const toastText = document.getElementById("toastText");
+<img class="logo-bottom" src="logo2.png">
 
-setInterval(() => {
-  i = (i + 1) % mensajes.length;
-  const data = mensajes[i];
+<div class="slots-title">+3.000 SLOTS</div>
+<div class="slots-subtitle">Recomendados de la semana:</div>
 
-  toastText.innerHTML = `
-    <div class="city">${data.city}</div>
-    <div class="stars">★★★★★</div>
-    <div>
-      <span class="label">usuario:</span> ${data.user}
-      <span class="action"> está reclamando el bono</span>
-    </div>
-  `;
-}, 2000);
-</script>
+<div class="cards-grid">
+<div class="slot-card"><img src="slot1.png"><div class="slot-name">Spaceman</div></div>
+<div class="slot-card"><img src="slot2.png"><div class="slot-name">Sweet Bonanza</div></div>
+<div class="slot-card"><img src="slot3.png"><div class="slot-name">Gates of Olympus</div></div>
+<div class="slot-card"><img src="slot4.png"><div class="slot-name">Big Bass</div></div>
+</div>
+
+</div>
 
 </body>
 </html>
