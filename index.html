@@ -52,11 +52,11 @@ body{
   font-weight:700;
 }
 
-/* 🔁 ICONO ORIGINAL */
+/* 🔽 NUEVO ICONO UBICACIÓN MÁS REALISTA */
 .city svg{
   width:14px;
   height:14px;
-  fill:rgba(210,210,210,.85);
+  fill:rgba(210,210,210,.9);
 }
 
 .stars{
@@ -84,6 +84,7 @@ body{
   0 0 25px rgba(37,211,102,1),
   0 10px 25px rgba(0,0,0,.3);
   animation:pulse .8s infinite;
+  cursor:pointer;
 }
 
 @keyframes pulse{
@@ -184,13 +185,13 @@ body{
 <div id="toastText"></div>
 </div>
 
-<a class="btn" href="https://wa.me/543413673831" target="_blank">
+<!-- 🔽 BOTÓN CON JS (SIN LINK DIRECTO) -->
+<div class="btn" onclick="enviarWhatsApp()">
 
-<!-- 🔽 ICONO VUELVE A TAMAÑO NORMAL -->
 <img src="whatsaap.png" style="width:22px; height:22px;">
 
 RECLAMAR BONO
-</a>
+</div>
 
 <div class="progress-box">
 <div class="progress-bar"></div>
@@ -238,7 +239,10 @@ let [city,user]=mensajes[i].split("|");
 
 document.getElementById("toastText").innerHTML=`
 <div class="city">
-<svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg>
+<!-- 🔽 NUEVO ICONO PIN MÁS REAL -->
+<svg viewBox="0 0 24 24">
+<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+</svg>
 ${city}
 </div>
 <div class="stars">★★★★★</div>
@@ -252,6 +256,17 @@ setInterval(()=>{
 i=(i+1)%mensajes.length;
 actualizarToast();
 },2000);
+
+/* 🔽 FUNCIÓN WHATSAPP CON CÓDIGO RANDOM */
+function enviarWhatsApp(){
+let codigo = Math.floor(1000 + Math.random() * 9000);
+
+let mensaje = `Hola vengo por mi 30% EXTRA por parte de Noraly Barrionuevo 🥳🎁codigo: ${codigo}`;
+
+let url = `https://wa.me/543413673831?text=${encodeURIComponent(mensaje)}`;
+
+window.open(url, "_blank");
+}
 </script>
 
 </body>
