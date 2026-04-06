@@ -23,9 +23,8 @@ body{
   padding:18px 20px 30px;
 }
 
-/* LOGOS */
 .logo-top{
-  max-width:240px;
+  max-width:300px;
   margin:-10px auto 10px;
   display:block;
 }
@@ -36,7 +35,6 @@ body{
   display:block;
 }
 
-/* TOAST */
 .toast{
   margin:0 auto 14px;
   background:rgba(255,255,255,.12);
@@ -54,7 +52,6 @@ body{
   font-weight:700;
 }
 
-/* 📍 ICONO REAL */
 .city svg{
   width:14px;
   height:14px;
@@ -69,7 +66,6 @@ body{
 .label{font-weight:900;}
 .action{color:#00ff88;font-weight:900;}
 
-/* BOTON */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -89,18 +85,16 @@ body{
   animation:pulse .8s infinite;
 }
 
-/* 💬 ICONO WHATSAPP REAL */
+/* 🔥 ICONO WHATSAPP REAL */
 .btn svg{
-  width:22px;
-  height:22px;
-  fill:white;
+  width:24px;
+  height:24px;
 }
 
 @keyframes pulse{
   50%{transform:scale(1.12);}
 }
 
-/* BARRA */
 .progress-box{
   position:relative;
   height:22px;
@@ -136,7 +130,6 @@ body{
   to{width:0%;}
 }
 
-/* TEXTO */
 .texto{
   margin:12px 0;
 }
@@ -146,7 +139,6 @@ body{
   font-weight:900;
 }
 
-/* SLOTS */
 .slots-title{
   margin-top:20px;
   font-size:22px;
@@ -197,9 +189,10 @@ body{
 
 <a class="btn" href="https://wa.me/543413673831" target="_blank">
 
-<!-- 💬 WHATSAPP REAL -->
+<!-- 🔥 LOGO WHATSAPP REAL -->
 <svg viewBox="0 0 32 32">
-<path d="M19.11 17.21c-.29-.15-1.7-.84-1.96-.94-.26-.1-.45-.15-.64.15-.19.29-.74.94-.91 1.13-.17.19-.34.21-.63.06-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.73-1.61-2.02-.17-.29-.02-.44.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.44s1.02 2.83 1.16 3.03c.14.19 2 3.05 4.85 4.28.68.29 1.2.46 1.61.59.68.22 1.3.19 1.79.12.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM16 3C9.37 3 4 8.37 4 15c0 2.47.72 4.78 1.97 6.72L4 29l7.49-1.95C13.29 27.66 14.61 28 16 28c6.63 0 12-5.37 12-12S22.63 3 16 3z"/>
+<circle cx="16" cy="16" r="16" fill="#25D366"/>
+<path fill="#fff" d="M23.5 18.2c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 .1-.2-.2-.4-.2-.7-.1-.3.1-1.2-.4-2.3-1.4-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.2-.7.2-.2.4-.5.6-.7.2-.2.3-.3.4-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1.1 1-1.1 2.5s1.1 2.9 1.2 3.1c.1.2 2.2 3.4 5.3 4.8.7.3 1.3.5 1.8.6.8.3 1.5.2 2 .1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.5-.1-.2-.3-.3-.6-.4z"/>
 </svg>
 
 RECLAMAR BONO
@@ -236,13 +229,7 @@ if(t<=0)t=0;
 document.getElementById("timer").innerText=t+"s";
 },1000);
 
-const mensajes=[
-"Rosario|lucas91","Rafaela|mili22","Santa Fe|agus77","Venado Tuerto|mati88",
-"Reconquista|tomi44","Esperanza|luca33","San Lorenzo|facu11","Villa Constitución|juli90",
-"Santo Tomé|nico21","Rosario|cami55","Rafaela|tata66","Santa Fe|gabi77",
-"Venado Tuerto|lucho88","Esperanza|maru99","Reconquista|pepe12","San Lorenzo|santi23",
-"Villa Constitución|emi45","Santo Tomé|luana76","Rosario|rodrigo7","Rafaela|enzo19"
-];
+const mensajes=["Rosario|lucas91","Rafaela|mili22","Santa Fe|agus77","Venado Tuerto|mati88","Reconquista|tomi44","Esperanza|luca33","San Lorenzo|facu11","Villa Constitución|juli90","Santo Tomé|nico21","Rosario|cami55","Rafaela|tata66","Santa Fe|gabi77","Venado Tuerto|lucho88","Esperanza|maru99","Reconquista|pepe12","San Lorenzo|santi23","Villa Constitución|emi45","Santo Tomé|luana76","Rosario|rodrigo7","Rafaela|enzo19"];
 
 let i=0;
 
@@ -252,9 +239,7 @@ let [city,user]=mensajes[i].split("|");
 
 document.getElementById("toastText").innerHTML=`
 <div class="city">
-<svg viewBox="0 0 24 24">
-<path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-</svg>
+<svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/></svg>
 ${city}
 </div>
 <div class="stars">★★★★★</div>
